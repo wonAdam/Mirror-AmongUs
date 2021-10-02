@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
 public class CreateRoomUI : MonoBehaviour
 {
@@ -134,6 +135,16 @@ public class CreateRoomUI : MonoBehaviour
         }
     }
 
+    public void CreateRoom()
+    {
+        var manager = AmongUsRoomManager.singleton;
+        
+        // Room Settings
+        //
+        //
+
+        manager.StartHost();
+    }
     
 }
 
