@@ -3746,7 +3746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBC29 \uB9CC\uB4E4\uAE30"
+  m_Text: "\uBC29 \uC785\uC7A5\uD558\uAE30"
 --- !u!222 &977236342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5344,7 +5344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1288172380}
   m_Layer: 5
-  m_Name: PRIVATE
+  m_Name: Private
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12020,7 +12020,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1758962480}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523190245}
+        m_TargetAssemblyTypeName: OnlineUI, Assembly-CSharp
+        m_MethodName: OnClickEnterGameRoomButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1758962480
 MonoBehaviour:
   m_ObjectHideFlags: 0

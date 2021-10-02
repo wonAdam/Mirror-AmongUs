@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class SettingsUI : MonoBehaviour
 {
     [SerializeField]
-    private Button MouseControlButton;
+    protected Button MouseControlButton;
     [SerializeField]
-    private Button KeyboardMouseControlButton;
+    protected Button KeyboardMouseControlButton;
     private Animator animator;
 
     private void Awake()
