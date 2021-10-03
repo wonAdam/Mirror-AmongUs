@@ -16,7 +16,7 @@ public class SortingSprite : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private SpriteRenderer[] additionalRenderers;
+    [SerializeField] private SpriteRenderer[] additionalRenderersAddOne;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +26,8 @@ public class SortingSprite : MonoBehaviour
 
         spriteRenderer.sortingOrder = sorter.GetSortingOrder(gameObject);
 
-        foreach(var renderer in additionalRenderers)
-            renderer.sortingOrder = sorter.GetSortingOrder(gameObject);
+        foreach(var renderer in additionalRenderersAddOne)
+            renderer.sortingOrder = sorter.GetSortingOrder(gameObject) + 1;
     }
 
     // Update is called once per frame
@@ -37,8 +37,8 @@ public class SortingSprite : MonoBehaviour
         {
             spriteRenderer.sortingOrder = sorter.GetSortingOrder(gameObject);
 
-            foreach (var renderer in additionalRenderers)
-                renderer.sortingOrder = sorter.GetSortingOrder(gameObject);
+            foreach (var renderer in additionalRenderersAddOne)
+                renderer.sortingOrder = sorter.GetSortingOrder(gameObject) + 1;
         }
     }
 }

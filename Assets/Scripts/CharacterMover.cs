@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using System;
+using System.Linq;
 
 public class CharacterMover : NetworkBehaviour
 {
@@ -12,9 +14,26 @@ public class CharacterMover : NetworkBehaviour
     [SyncVar]
     public float speed = 2f;
 
+    private SpriteRenderer spriteRenderer;
+
+    [SyncVar(hook = nameof(SetPlayerColor_Hook))]
+    public EPlayerColor playerColor;
+
+    private void SetPlayerColor_Hook(EPlayerColor oldColor, EPlayerColor newColor)
+    {
+        if(spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        spriteRenderer.material.SetColor("_PlayerColor", PlayerColor.GetColor(newColor));
+    }
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.material.SetColor("_PlayerColor", PlayerColor.GetColor(playerColor));
+
         animator = GetComponent<Animator>();
 
         if (hasAuthority)
