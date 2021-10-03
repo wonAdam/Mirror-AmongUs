@@ -29,15 +29,13 @@ public class OnlineUI : MonoBehaviour
     {
         if (nicknameInputField.text != "")
         {
-            //PlayerSettings.nickname = nicknameInputField.text;
+            PlayerSettings.nickname = nicknameInputField.text;
             AmongUsRoomManager.singleton.StartClient();
         }
         else
         {
             nicknameInputField.GetComponent<Animator>().SetTrigger("on");
         }
-
-
         
     }
 

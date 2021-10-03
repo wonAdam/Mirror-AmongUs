@@ -5,15 +5,13 @@ using Mirror;
 
 public class AmongUsRoomManager : NetworkRoomManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnRoomServerConnect(NetworkConnection conn)
     {
-        
-    }
+        base.OnRoomServerConnect(conn);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Vector3 spawnPos = FindObjectOfType<SpawnPositions>().GetSpawnPosition();
+
+        var player = Instantiate(spawnPrefabs[0], spawnPos, Quaternion.identity);
+        NetworkServer.Spawn(player, conn);
     }
 }
